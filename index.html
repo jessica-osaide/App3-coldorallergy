@@ -50,7 +50,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1; // adds +1 to cold variable
         }
 
-	function results() // function is created to connect onclick
+	function showResults() // function is created to connect onclick
 			{
 			var allergyPercent = 100 * (allergy_count/4); // allergy percentage is calculated
 			var coldPercent = 100 * (cold_count/4); // cold percentage is calculated
@@ -159,7 +159,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	<div id="content" class="w3-container"> <!-- header starts here -->
 		<p id="results"></p> <!-- calls variable for results -->
-		<a onclick="results()" class="w3-btn w3-black">Results</a> <!--created button to get results-->
+		<a onclick="showResults()" class="w3-btn w3-black">Results</a> <!--created button to get results-->
 		
 	</div> <!-- header closes here -->
 
