@@ -155,8 +155,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<script> // script starts here
 			function results() // function is created to connect onclick
 			{
-			var allergyPercent = (allergy_count/4)*100; // allergy percentage is calculated
-			var coldPercent = (cold_count/4)*100; // cold percentage is calculated
+			var allergyPercent = 100 * (allergy_count/4); // allergy percentage is calculated
+			var coldPercent = 100 * (cold_count/4); // cold percentage is calculated
 			var resultText = document.getElementById("results"); // variable is displayed
 			resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
 			} // calculates the probabilities of both allergies and cold
