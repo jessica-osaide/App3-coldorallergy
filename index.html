@@ -52,9 +52,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	function calculateResults() // function is created to connect onclick
 			{
-			var totalAnswers = allergy_count + cold_count;
-                        var allergyPercent = (allergy_count / totalAnswers) * 100;
-                        var coldPercent = (cold_count / totalAnswers) * 100;
+			var allergyPercent = 100 * (allergy_count / 4); // allergy percentage is calculated
+			var coldPercent = 100 * (cold_count / 4); // cold percentage is calculated
 			var resultText = document.getElementById("results"); // variable is displayed
 			resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
 			} // calculates the probabilities of both allergies and cold
@@ -155,12 +154,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <div class="page" id="results"> <!-- final page here -->
 		<div class="w3-container w3-flat-carrot"> <!-- header starts here -->
-			<h1>Results</h1> <!-- results here -->
+			<div id="header" class="w3-container w3-flat-carrot">
+				<h1>Results</h1> <!-- results here -->
 		</div> 
 
         <div id="content" class="w3-container"> <!-- header starts here -->
-            <div id="results"></div> <!
-            <a href="javascript:void(0);" onclick="calculateResults();" class="w3-btn w3-black">Results</a>
+            <p id="results"></p>
+            <a onclick="calculateResults()" class="w3-btn w3-black">Calculate Results</a>
         </div> <!-- header closes here -->
 		
 	</div>
