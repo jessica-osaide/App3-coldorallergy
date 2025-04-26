@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Jessica Osaide
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+To make a short survey whether the participant has a cold or allergies
  
 Known Issues:
-blah, blah, blah, blah
+No known issues
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
@@ -50,12 +50,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1; // adds +1 to cold variable
         }
 
-	function calculateResults() // function is created to connect onclick
+	function showResults() // function is created to connect onclick
 			{
-			var allergyPercent = 100 * (allergy_count / 4); // allergy percentage is calculated
-			var coldPercent = 100 * (cold_count / 4); // cold percentage is calculated
+			var allergyPercent = 100*(allergy_count/4); // allergy percentage is calculated
+			var coldPercent = 100*(cold_count/4); // cold percentage is calculated
 			var resultText = document.getElementById("results"); // variable is displayed
-			resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%";
+			resultText.innerHTML = "Probability of allergies =" + allergyPercent + "%" + "<br> Probability of a cold = " + coldPercent + "%";
 			} // calculates the probabilities of both allergies and cold
 	
 </script> <!-- script closes here -->
@@ -104,7 +104,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div> <!-- header closes here -->
 	
 
-	
     	<div id="content" class="w3-container"> <!-- header starts here -->
         <p>Are your eyes watery or itchy?</p>    <!-- question 1 content here -->
     	</div> <!-- header closes here -->
@@ -145,22 +144,48 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div> <!-- header closes here -->
 	
 	<div id="content" class="w3-container"> <!-- header starts here -->
-		<p>Are your symptoms seasonal or chronic?</p> <!-- question 4 content here -->   
+		<p>Do you have body aches and pains?</p> <!-- question 4 content here -->   
 	</div> <!-- header closes here -->
 
-	<a href="#Results Page" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!-- +1 to allergy count -->
-	<a href="#Results Page" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!-- +1 to cold count -->
+	<a href="#five" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a> <!-- +1 to cold count -->
+	<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black"> No </a> <!-- +1 to allergy count -->
+</div> <!-- proceeding to page 5 -->
+
+<div class="page" id="five"> <!-- page 5 here -->
+	<div class="w3-container w3-flat-carrot"> <!-- header starts here -->
+		<h1>Question 3</h1> <!-- question 5 here -->
+	</div> <!-- header closes here -->
+	
+	<div id="content" class="w3-container"> <!-- header starts here -->
+		<p>Do you find yourself wheezing at times?</p> <!-- question 5 content here -->   
+	</div> <!-- header closes here -->
+
+	<a href="#six" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!-- +1 to cold count -->
+	<a href="#six" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!-- +1 to allergy count -->
+</div> <!-- proceeding to page 6 -->
+
+<div class="page" id="six"> <!-- page 6 here -->
+	<div class="w3-container w3-flat-carrot"> <!-- header starts here -->
+		<h1>Question 6</h1> <!-- question 6 here -->
+	</div> <!-- header closes here -->
+	
+	<div id="content" class="w3-container"> <!-- header starts here -->
+		<p>Are your symptoms seasonal or chronic?</p> <!-- question 6 content here -->   
+	</div> <!-- header closes here -->
+
+	<a href="#results" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a> <!-- +1 to allergy count -->
+	<a href="#results" onclick="coldAdd();" class="w3-btn w3-black"> No </a> <!-- +1 to cold count -->
 </div> <!-- proceeding to results -->
 
-<div class="page" id="results"> <!-- final page here -->
+<div class="page" id="results"> <!-- results page here -->
 		<div class="w3-container w3-flat-carrot"> <!-- header starts here -->
 			<div id="header" class="w3-container w3-flat-carrot">
-				<h1>Results</h1> <!-- results here -->
+				<h1>Results Here!</h1> <!-- results content here -->
 		</div> 
 
         <div id="content" class="w3-container"> <!-- header starts here -->
             <p id="results"></p>
-            <a onclick="calculateResults()" class="w3-btn w3-black">Calculate Results</a>
+            <a onclick="showResults()" class="w3-btn w3-black">Show Results</a> <!-- creates a button that displays percentages -->
         </div> <!-- header closes here -->
 		
 	</div>
